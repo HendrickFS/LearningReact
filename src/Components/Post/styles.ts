@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -9,6 +10,9 @@ export const Container = styled.div`
         border-radius: 1.5rem;
         width: 100%;
         height: auto;
+    }
+    img:hover{
+        filter: brightness(70%)
     }
     h3{
         font-family: Arial;
@@ -31,5 +35,13 @@ export const Container = styled.div`
     h4{
         font-family: serif;
         color: #4F4F4F;
+    }
+    #colection{
+        position: absolute;
+        top: 20px;
+        left: 15px;
+        color: white;
+        text-decoration: none;
+        font-family: Arial, Helvetica, sans-serif;
     }
     `

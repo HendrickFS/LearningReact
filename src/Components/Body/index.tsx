@@ -1,14 +1,15 @@
 import Row from "../Row";
 import { Container } from "./styles";
-import Sky from "../../assets/sky.jpeg";
-import nightBus from "../../assets/nightBus.jpeg";
+// import Sky from "../../assets/sky.jpeg";
+// import nightBus from "../../assets/nightBus.jpeg";
+import imgArray from "../../services/getImagesForPosts";
 
 interface postImgs {
     img: string;
     profile: string;
 }
 
-const imgObjects = [{img: nightBus, profile: Sky}, {img: Sky, profile: nightBus}, {img: Sky, profile: nightBus}, {img: nightBus, profile: Sky}, {img: Sky, profile: nightBus}, {img: nightBus, profile: Sky}, {img: nightBus, profile: Sky}, {img: Sky, profile: nightBus}, {img: Sky, profile: Sky}, {img: Sky, profile: nightBus}, {img: Sky, profile: Sky}, {img: nightBus, profile: Sky}, {img: Sky, profile: nightBus}, {img: nightBus, profile: Sky}, {img: Sky, profile: nightBus}, {img: nightBus, profile: Sky}, {img: nightBus, profile: Sky}, {img: Sky, profile: nightBus}, {img: nightBus, profile: Sky}, {img: Sky, profile: nightBus}, {img: Sky, profile: Sky}, {img: nightBus, profile: Sky}, {img: Sky, profile: nightBus}, {img: nightBus, profile: Sky}, {img: Sky, profile: nightBus}];
+const imgObjects = imgArray
 
 let numberPerColumn = Math.floor(imgObjects.length/5);
 let cont = 0;
@@ -32,6 +33,7 @@ const Body = () => {
                     if (rowImgs.length === numberPerColumn) {
                         return <Row imgs={rowImgs} key={keys}/>
                     }
+                    return null;
                 })}
             </Container>
 }
